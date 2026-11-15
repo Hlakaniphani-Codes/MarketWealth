@@ -18,6 +18,40 @@ navigation.querySelectorAll("a").forEach((link) => {
 
 document.querySelector("#current-year").textContent = new Date().getFullYear();
 
+const copyStatus = document.querySelector(".copy-status");
+document.querySelectorAll(".copy-button").forEach((button) => {
+  button.addEventListener("click", async () => {
+    const text = button.dataset.copy;
+    const label = button.dataset.label;
+
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const temporaryInput = document.createElement("textarea");
+        temporaryInput.value = text;
+        temporaryInput.setAttribute("readonly", "");
+        temporaryInput.style.position = "fixed";
+        temporaryInput.style.opacity = "0";
+        document.body.append(temporaryInput);
+        temporaryInput.select();
+        const copied = document.execCommand("copy");
+        temporaryInput.remove();
+
+        if (!copied) {
+          throw new Error("The browser did not allow copying to the clipboard.");
+        }
+      }
+
+      copyStatus.textContent = `Copied ${label}.`;
+      copyStatus.removeAttribute("data-error");
+    } catch (error) {
+      copyStatus.textContent = `Couldn't copy the ${label}. Please select and copy it manually.`;
+      copyStatus.dataset.error = "true";
+    }
+  });
+});
+
 const canvas = document.querySelector("#candle-chart");
 const context = canvas.getContext("2d");
 const candleData = [
