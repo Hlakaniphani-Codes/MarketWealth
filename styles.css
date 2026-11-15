@@ -119,6 +119,15 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
 .approach-card h3 { font-size: 15px; letter-spacing: -.025em; margin-bottom: 8px; font-weight: 600; }
 .approach-card p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; max-width: 280px; }
 
+.market-guide { padding-block: 0 100px; }
+.market-guide-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.market-guide-card { min-height: 205px; padding: 21px; border: 1px solid var(--line); background: linear-gradient(145deg, rgba(255, 255, 255, .025), rgba(255, 255, 255, 0)); }
+.guide-index { color: var(--gold); font-size: 8px; letter-spacing: .14em; }
+.market-guide-card h3 { margin: 29px 0 10px; font-size: 15px; font-weight: 600; letter-spacing: -.025em; }
+.market-guide-card p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.8; }
+.market-guide-footnote { display: flex; align-items: center; gap: 9px; margin: 17px 0 0; color: #858379; font-size: 9px; }
+.market-guide-footnote span { display: grid; place-items: center; width: 16px; height: 16px; border: 1px solid rgba(213, 111, 104, .5); color: var(--red); }
+
 .programmes { padding-block: 95px 110px; border-top: 1px solid var(--line); }
 .programmes-heading { margin-bottom: 42px; }
 .programme-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 13px; }
@@ -173,6 +182,15 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
 .broker-copy p { margin: 0; color: var(--muted); font-size: 10px; line-height: 1.7; }
 .button-outline { border: 1px solid rgba(211, 180, 107, .4); color: var(--gold-light); white-space: nowrap; }
 .button-outline:hover { background: var(--gold); color: #13120e; }
+
+.community { padding-block: 85px; border-bottom: 1px solid var(--line); }
+.community-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.community-card { min-height: 205px; display: flex; flex-direction: column; padding: 20px; border: 1px solid var(--line); background: var(--surface); }
+.community-tag { color: var(--gold); font-size: 7px; letter-spacing: .15em; }
+.community-card h3 { margin: 20px 0 8px; font-size: 17px; font-weight: 600; }
+.community-card p { flex: 1; margin: 0 0 17px; color: var(--muted); font-size: 10px; line-height: 1.75; }
+.community-card a { display: flex; justify-content: space-between; gap: 8px; padding-top: 11px; border-top: 1px solid var(--line); color: #d7d2c5; font-size: 9px; }
+.community-card a span { color: var(--gold); font-size: 13px; }
 
 .vlog { display: grid; grid-template-columns: .75fr 1.25fr; align-items: center; gap: 8%; padding-block: 72px; border-bottom: 1px solid var(--line); }
 .vlog-copy h2 { margin-bottom: 17px; }
@@ -230,6 +248,8 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
 }
 
 @media (max-width: 850px) {
+  .site-nav { gap: 15px; font-size: 10px; }
+  .nav-cta { padding: 10px 12px; }
   .hero { gap: 5%; min-height: 510px; }
   .hero h1 { font-size: clamp(54px, 8vw, 72px); }
   .market-card { padding-inline: 18px; }
@@ -237,6 +257,7 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
   .strip-owner { width: 100%; text-align: center; }
   .programme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .programme-note { grid-column: span 2; }
+  .market-guide-grid, .community-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .payment { gap: 5%; }
   .contact { gap: 6%; }
 }
@@ -261,6 +282,10 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
   .hero-index { bottom: 28px; }
   .trust-strip { min-height: 90px; padding: 15px 20px; gap: 14px 22px; font-size: 8px; }
   .strip-owner { line-height: 1.8; }
+  .market-guide { padding-bottom: 72px; }
+  .market-guide-grid, .community-grid { grid-template-columns: 1fr; }
+  .market-guide-card, .community-card { min-height: 0; }
+  .market-guide-card h3 { margin-top: 19px; }
   .approach { padding-block: 76px; }
   .section-heading { display: block; margin-bottom: 30px; }
   .section-heading > p { margin-top: 18px; }
@@ -279,6 +304,7 @@ h2 { font-size: clamp(34px, 4vw, 50px); font-weight: 600; letter-spacing: -.055e
   .broker-copy { flex: 1 1 calc(100% - 60px); }
   .broker-copy h2 { font-size: 17px; }
   .button-outline { width: 100%; margin-left: 54px; }
+  .community { padding-block: 64px; }
   .vlog { grid-template-columns: 1fr; gap: 27px; padding-block: 62px; }
   .faq { padding-block: 64px; }
   .faq-item summary { min-height: 58px; font-size: 12px; }
