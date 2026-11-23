@@ -27,12 +27,6 @@ summary:focus-visible {
   border: 1px dashed rgba(146, 112, 43, .4);
 }
 
-.portrait-feature {
-  display: grid;
-  justify-items: center;
-  gap: 1.5rem;
-}
-
 .portrait-video-shell {
   width: min(100%, 17rem);
   overflow: hidden;
@@ -60,16 +54,6 @@ summary:focus-visible {
   color: #ead49a;
   text-decoration: underline;
   text-underline-offset: 2px;
-}
-
-.portrait-feature-copy {
-  min-width: 0;
-}
-
-@media (min-width: 1280px) {
-  .portrait-feature {
-    grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {

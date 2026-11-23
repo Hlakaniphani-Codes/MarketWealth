@@ -29,6 +29,7 @@ document.querySelectorAll(".portrait-video").forEach((video) => {
   video.addEventListener("error", () => {
     const fallback = video.parentElement.querySelector(".portrait-video-fallback");
     if (fallback) {
+      fallback.hidden = false;
       fallback.textContent = "This browser could not play the video. ";
       const link = document.createElement("a");
       link.href = video.querySelector("source").src;
