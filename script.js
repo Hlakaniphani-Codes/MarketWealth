@@ -1,103 +1,72 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const navigation = document.querySelector("#primary-nav");
+// Mobile menu
+const menuBtn = document.getElementById("menuBtn") || document.querySelector(".menu-btn");
+const mobileNav = document.getElementById("mobileNav") || document.querySelector(".mobile-nav");
 
-menuToggle.addEventListener("click", () => {
-  const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-  menuToggle.setAttribute("aria-label", isExpanded ? "Open navigation" : "Close navigation");
-  navigation.classList.toggle("is-open", !isExpanded);
-});
-
-navigation.querySelectorAll("a").forEach((link) => {
-  link.addEventListener("click", () => {
-    menuToggle.setAttribute("aria-expanded", "false");
-    menuToggle.setAttribute("aria-label", "Open navigation");
-    navigation.classList.remove("is-open");
+if (menuBtn && mobileNav) {
+  menuBtn.addEventListener("click", () => {
+    const open = menuBtn.getAttribute("aria-expanded") === "true";
+    menuBtn.setAttribute("aria-expanded", String(!open));
+    menuBtn.setAttribute("aria-label", open ? "Open menu" : "Close menu");
+    mobileNav.classList.toggle("hidden", open);
+    mobileNav.classList.toggle("is-open", !open);
   });
-});
 
-document.querySelector("#current-year").textContent = new Date().getFullYear();
+  mobileNav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuBtn.setAttribute("aria-label", "Open menu");
+      mobileNav.classList.add("hidden");
+      mobileNav.classList.remove("is-open");
+    });
+  });
+}
 
-const copyStatus = document.querySelector(".copy-status");
-document.querySelectorAll(".copy-button").forEach((button) => {
-  button.addEventListener("click", async () => {
-    const text = button.dataset.copy;
-    const label = button.dataset.label;
+// Current year
+const yearEl = document.querySelector("#year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    try {
-      if (navigator.clipboard && window.isSecureContext) {
-        await navigator.clipboard.writeText(text);
-      } else {
-        const temporaryInput = document.createElement("textarea");
-        temporaryInput.value = text;
-        temporaryInput.setAttribute("readonly", "");
-        temporaryInput.style.position = "fixed";
-        temporaryInput.style.opacity = "0";
-        document.body.append(temporaryInput);
-        temporaryInput.select();
-        const copied = document.execCommand("copy");
-        temporaryInput.remove();
-
-        if (!copied) {
-          throw new Error("The browser did not allow copying to the clipboard.");
-        }
-      }
-
-      copyStatus.textContent = `Copied ${label}.`;
-      copyStatus.removeAttribute("data-error");
-    } catch (error) {
-      copyStatus.textContent = `Couldn't copy the ${label}. Please select and copy it manually.`;
-      copyStatus.dataset.error = "true";
+document.querySelectorAll(".portrait-video").forEach((video) => {
+  video.addEventListener("error", () => {
+    const fallback = video.parentElement.querySelector(".portrait-video-fallback");
+    if (fallback) {
+      fallback.textContent = "This browser could not play the video. ";
+      const link = document.createElement("a");
+      link.href = video.querySelector("source").src;
+      link.textContent = "Open or download it here.";
+      fallback.append(link);
     }
   });
 });
 
-const canvas = document.querySelector("#candle-chart");
-const context = canvas.getContext("2d");
-const candleData = [
-  [42, 57, 35, 63], [57, 49, 44, 66], [49, 65, 43, 72], [65, 58, 51, 70],
-  [58, 72, 53, 78], [72, 64, 58, 80], [64, 79, 59, 85], [79, 71, 66, 89],
-  [71, 84, 66, 91], [84, 76, 70, 96], [76, 89, 71, 99], [89, 82, 76, 103],
-  [82, 94, 77, 108], [94, 86, 80, 111], [86, 99, 81, 113], [99, 90, 85, 116],
-  [90, 103, 84, 119], [103, 95, 90, 123], [95, 108, 89, 124], [108, 100, 95, 128],
-  [100, 113, 95, 130], [113, 105, 100, 135], [105, 119, 99, 138], [119, 110, 105, 142],
-];
-
-function drawCandles() {
-  const bounds = canvas.getBoundingClientRect();
-  const pixelRatio = window.devicePixelRatio || 1;
-  canvas.width = Math.round(bounds.width * pixelRatio);
-  canvas.height = Math.round(bounds.height * pixelRatio);
-  context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
-
-  const width = bounds.width;
-  const height = bounds.height;
-  const topPadding = 12;
-  const bottomPadding = 16;
-  const chartHeight = height - topPadding - bottomPadding;
-  const min = 30;
-  const max = 145;
-  const slot = width / candleData.length;
-  const bodyWidth = Math.max(4, Math.min(9, slot * 0.45));
-
-  candleData.forEach(([open, close, low, high], index) => {
-    const x = slot * index + slot / 2;
-    const y = (value) => topPadding + ((max - value) / (max - min)) * chartHeight;
-    const isUp = close >= open;
-
-    context.strokeStyle = isUp ? "rgba(100, 184, 135, .9)" : "rgba(213, 111, 104, .88)";
-    context.fillStyle = isUp ? "rgba(100, 184, 135, .82)" : "rgba(213, 111, 104, .82)";
-    context.lineWidth = 1;
-    context.beginPath();
-    context.moveTo(x, y(high));
-    context.lineTo(x, y(low));
-    context.stroke();
-    const bodyTop = Math.min(y(open), y(close));
-    const bodyHeight = Math.max(2, Math.abs(y(open) - y(close)));
-    context.fillRect(x - bodyWidth / 2, bodyTop, bodyWidth, bodyHeight);
+// Copy to clipboard
+const copyStatus = document.querySelector(".copy-status");
+document.querySelectorAll(".copy").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    const text = btn.dataset.copy;
+    const label = btn.dataset.label;
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(text);
+      } else {
+        const ta = document.createElement("textarea");
+        ta.value = text;
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand("copy");
+        ta.remove();
+        if (!ok) throw new Error("Copy blocked");
+      }
+      if (copyStatus) {
+        copyStatus.textContent = `Copied ${label}.`;
+        copyStatus.removeAttribute("data-error");
+      }
+    } catch {
+      if (copyStatus) {
+        copyStatus.textContent = `Couldn't copy — please select and copy manually.`;
+        copyStatus.dataset.error = "true";
+      }
+    }
   });
-}
-
-const resizeObserver = new ResizeObserver(drawCandles);
-resizeObserver.observe(canvas);
-drawCandles();
+});

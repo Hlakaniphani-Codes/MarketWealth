@@ -1,0 +1,141 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #92702b;
+  color: #ffffff;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #92702b;
+  outline-offset: 3px;
+}
+
+.media-placeholder {
+  background:
+    linear-gradient(135deg, rgba(146, 112, 43, .06), transparent 55%),
+    #f8f7f4;
+  border: 1px dashed rgba(146, 112, 43, .4);
+}
+
+.portrait-feature {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+}
+
+.portrait-video-shell {
+  width: min(100%, 17rem);
+  overflow: hidden;
+  border: 1px solid rgba(146, 112, 43, .4);
+  background: #090a09;
+}
+
+.portrait-video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #090a09;
+}
+
+.portrait-video-fallback {
+  margin: 0;
+  padding: .65rem .8rem;
+  color: #bdb8aa;
+  font-size: .75rem;
+  line-height: 1.5;
+}
+
+.portrait-video-fallback a {
+  color: #ead49a;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.portrait-feature-copy {
+  min-width: 0;
+}
+
+@media (min-width: 1280px) {
+  .portrait-feature {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* Shared presentation refinements */
+body {
+  letter-spacing: -0.01em;
+}
+
+header a,
+header button,
+footer a,
+.fixed {
+  transition-timing-function: ease;
+  transition-duration: 180ms;
+}
+
+main section {
+  position: relative;
+}
+
+main h1.font-display {
+  font-size: clamp(2.25rem, 4.5vw, 4rem);
+}
+
+main h2.font-display {
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+}
+
+main li h2.font-display {
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+}
+
+main h3.font-display {
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+}
+
+video,
+iframe,
+img {
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2 {
+    text-wrap: balance;
+  }
+
+  .fixed.bottom-6.right-6 {
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

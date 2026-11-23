@@ -1,376 +1,194 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#090a09">
-    <meta name="description" content="Forex education, mentorship and signals from Markets Wealth Forex Group PTY LTD.">
-    <title>Markets Wealth | Trade with intention</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="#home" aria-label="Markets Wealth home">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span class="brand-name">MARKETS<span>WEALTH</span></span>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Learn forex with practical mentorship, live community support and a disciplined trading process through Markets Wealth in South Africa.">
+  <title>Markets Wealth | Learn to trade with purpose</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="site-theme.js"></script>
+  <link rel="stylesheet" href="site.css">
+</head>
+
+<body class="bg-ink text-paper font-sans antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-ink/85 backdrop-blur-md border-b border-line">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 h-[68px] flex items-center gap-10">
+
+      <a href="#top" class="flex items-center gap-2.5">
+        <svg class="w-6 h-6 text-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M3 18L9 9L14 13L21 4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="font-display font-semibold text-xl tracking-tight">Markets Wealth</span>
       </a>
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation">
-        <span></span><span></span>
-      </button>
-      <nav class="site-nav" id="primary-nav" aria-label="Main navigation">
-        <a href="#approach">Our approach</a>
-        <a href="#market-guide">Market guide</a>
-        <a href="#programmes">Programmes</a>
-        <a href="#getting-started">Getting started</a>
-        <a href="#community">Community</a>
-        <a href="#payment">Payment</a>
-        <a href="#faq">FAQs</a>
-        <a class="nav-cta" href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer">Get in touch <span aria-hidden="true">↗</span></a>
+
+      <nav class="hidden md:flex items-center gap-6 ml-auto text-sm text-muted" aria-label="Main navigation">
+        <a href="programmes.html" class="hover:text-paper transition-colors">Mentorship &amp; signals</a>
+        <a href="seminars.html" class="hover:text-paper transition-colors">Community</a>
+        <a href="vlogs.html" class="hover:text-paper transition-colors">Learning</a>
+        <a href="about.html" class="hover:text-paper transition-colors">About</a>
+        <a href="process.html" class="hover:text-paper transition-colors">How to join</a>
       </nav>
-    </header>
 
-    <main>
-      <section class="hero section-wrap" id="home">
-        <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> MARKETS WEALTH FOREX GROUP PTY LTD</div>
-          <h1>Trade with<br><span>intention.</span></h1>
-          <p class="hero-lede">Build your market knowledge with focused forex mentorship, community signals and trader support.</p>
-          <div class="hero-actions">
-            <a class="button button-gold" href="#programmes">Explore programmes <span aria-hidden="true">↘</span></a>
-            <a class="text-link" href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer">Speak with the team <span aria-hidden="true">↗</span></a>
-          </div>
-          <div class="hero-note"><span class="note-line"></span> EDUCATION FIRST. DISCIPLINE ALWAYS.</div>
-        </div>
-        <div class="market-card" aria-label="Decorative candlestick chart">
-          <div class="market-card-top">
-            <div><span class="market-label">MARKET PULSE</span><strong>Price action</strong></div>
-            <span class="live-tag"><i></i> MARKET INSIGHT</span>
-          </div>
-          <div class="chart-meta"><span>TRADING IS A PROCESS</span><span class="chart-change">↗ <b>STAY DISCIPLINED</b></span></div>
-          <div class="chart-area">
-            <div class="chart-grid" aria-hidden="true"></div>
-            <canvas id="candle-chart" aria-hidden="true"></canvas>
-            <div class="chart-label chart-label-top">ANALYSE</div>
-            <div class="chart-label chart-label-bottom">EXECUTE WITH CARE</div>
-          </div>
-          <div class="market-card-bottom"><span>LEARN THE SETUP</span><span>MANAGE THE RISK</span></div>
-          <p class="chart-disclaimer">Illustrative candles only — not live market data or a trading signal.</p>
-        </div>
-        <div class="hero-index" aria-hidden="true">MW<span> / 01</span></div>
-      </section>
-
-      <section class="trust-strip" aria-label="Brand values">
-        <div><span class="strip-number">01</span> EDUCATION</div>
-        <div><span class="strip-number">02</span> COMMUNITY</div>
-        <div><span class="strip-number">03</span> DISCIPLINE</div>
-        <div class="strip-owner">MENTORED BY <strong>KHANYA DLODLONGWANA</strong></div>
-      </section>
-
-      <section class="approach section-wrap" id="approach">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> A MORE FOCUSED WAY TO LEARN</div>
-            <h2>Make your next move<br><span>an informed one.</span></h2>
-          </div>
-          <p>Forex trading takes study, patience and risk awareness. Find the learning and support option that fits where you are today.</p>
-        </div>
-        <div class="approach-cards">
-          <article class="approach-card">
-            <span class="card-index">01 / LEARN</span>
-            <div class="approach-icon" aria-hidden="true">↗</div>
-            <h3>Start with the foundations.</h3>
-            <p>Build your understanding of the forex market with beginner-focused guidance.</p>
-          </article>
-          <article class="approach-card">
-            <span class="card-index">02 / CONNECT</span>
-            <div class="approach-icon icon-green" aria-hidden="true">⌁</div>
-            <h3>Learn alongside a community.</h3>
-            <p>Access a space for signals, market conversation and trader support.</p>
-          </article>
-          <article class="approach-card">
-            <span class="card-index">03 / PRACTISE</span>
-            <div class="approach-icon icon-red" aria-hidden="true">⌖</div>
-            <h3>Keep your process in focus.</h3>
-            <p>Explore one-on-one support and copy trading with clear expectations.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="market-guide section-wrap" id="market-guide">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> THE MARKETS, IN PLAIN LANGUAGE</div>
-            <h2>Know what you're<br><span>getting into.</span></h2>
-          </div>
-          <p>New to trading? Start by understanding the service you are considering. Ask the team what each programme includes before you pay.</p>
-        </div>
-        <div class="market-guide-grid">
-          <article class="market-guide-card">
-            <span class="guide-index">01 / FOREX</span>
-            <h3>What is forex?</h3>
-            <p>Forex is the exchange of one currency for another. Prices move as buyers and sellers respond to economic news, events and market activity.</p>
-          </article>
-          <article class="market-guide-card">
-            <span class="guide-index">02 / SYNTHETICS</span>
-            <h3>What are synthetic markets?</h3>
-            <p>Synthetic indices are broker-provided, simulated markets. They are different from currency pairs and still involve significant trading risk.</p>
-          </article>
-          <article class="market-guide-card">
-            <span class="guide-index">03 / SIGNALS</span>
-            <h3>What is a signal?</h3>
-            <p>A signal is a market idea shared for consideration, not a promise or a requirement to trade. Confirm what information and support are included with the team.</p>
-          </article>
-          <article class="market-guide-card">
-            <span class="guide-index">04 / COPY TRADING</span>
-            <h3>What is copy trading?</h3>
-            <p>Copy trading attempts to mirror another account's trades. It does not remove risk: copied trades can lose money, and your results may differ.</p>
-          </article>
-        </div>
-        <p class="market-guide-footnote"><span aria-hidden="true">!</span> These are general explanations, not trading instructions or financial advice.</p>
-      </section>
-
-      <section class="programmes section-wrap" id="programmes">
-        <div class="section-heading programmes-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> FIND YOUR STARTING POINT</div>
-            <h2>Programmes &amp;<br><span>pricing.</span></h2>
-          </div>
-          <p>Choose an option to discuss with the team. Message for any programme details not listed here.</p>
-        </div>
-        <div class="programme-grid">
-          <article class="programme-card">
-            <div class="programme-top"><span class="programme-type">01 — FOUNDATIONS</span><span class="programme-symbol">↗</span></div>
-            <h3>Beginners</h3>
-            <p class="programme-description">For those starting out and looking for beginner-focused forex guidance.</p>
-            <div class="price"><span>R</span>15,000</div>
-            <a class="programme-link" href="https://wa.me/27746040702?text=Hi%2C%20I%27m%20interested%20in%20the%20Beginners%20programme." target="_blank" rel="noopener noreferrer">Enquire about this programme <span>↗</span></a>
-          </article>
-          <article class="programme-card">
-            <div class="programme-top"><span class="programme-type">02 — PERSONAL</span><span class="programme-symbol">⌖</span></div>
-            <h3>One on one</h3>
-            <p class="programme-description">A private mentorship option for focused, one-on-one guidance.</p>
-            <div class="price"><span>R</span>10,000</div>
-            <a class="programme-link" href="https://wa.me/27746040702?text=Hi%2C%20I%27m%20interested%20in%20one-on-one%20mentorship." target="_blank" rel="noopener noreferrer">Enquire about this programme <span>↗</span></a>
-          </article>
-          <article class="programme-card programme-featured">
-            <div class="programme-top"><span class="programme-type">03 — COMMUNITY</span><span class="programme-symbol">⌁</span></div>
-            <h3>Signals Cartel Group</h3>
-            <p class="programme-description">A group option for signal access, available monthly or lifetime.</p>
-            <div class="price-options">
-              <div><span>MONTHLY</span><strong><small>R</small>1,000</strong></div>
-              <div><span>LIFETIME</span><strong><small>R</small>3,000</strong></div>
-            </div>
-            <a class="programme-link" href="https://wa.me/27746040702?text=Hi%2C%20I%27d%20like%20details%20about%20the%20Signals%20Cartel%20Group." target="_blank" rel="noopener noreferrer">Enquire about this programme <span>↗</span></a>
-          </article>
-          <article class="programme-card">
-            <div class="programme-top"><span class="programme-type">04 — SYNTHETICS</span><span class="programme-symbol">⌁</span></div>
-            <h3>Synthetics Signals</h3>
-            <p class="programme-description">A signal option focused on synthetic markets. Ask what is included.</p>
-            <div class="price"><span>R</span>1,000</div>
-            <a class="programme-link" href="https://wa.me/27746040702?text=Hi%2C%20I%27m%20interested%20in%20Synthetics%20Signals." target="_blank" rel="noopener noreferrer">Enquire about this programme <span>↗</span></a>
-          </article>
-          <article class="programme-card">
-            <div class="programme-top"><span class="programme-type">05 — COPY TRADER</span><span class="programme-symbol">⇄</span></div>
-            <h3>Copy trader</h3>
-            <p class="programme-description">An admin will share copy-trader details when they get back to you. Copying trades carries risk.</p>
-            <div class="price"><span>R</span>8,000</div>
-            <a class="programme-link" href="https://wa.me/27746040702?text=Hi%2C%20I%27m%20interested%20in%20the%20Copy%20Trader%20option." target="_blank" rel="noopener noreferrer">Enquire about this programme <span>↗</span></a>
-          </article>
-          <aside class="programme-note">
-            <span class="note-mark">!</span>
-            <div><strong>Need more information?</strong><p>Send a message before making a payment to confirm programme details and availability.</p><a href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer">Contact the team <span>↗</span></a></div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="getting-started section-wrap" id="getting-started">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> A CLEAR PATH FORWARD</div>
-            <h2>How to<br><span>get started.</span></h2>
-          </div>
-          <p>Take a moment to confirm what you are signing up for. Ask questions before sending payment.</p>
-        </div>
-        <ol class="start-steps">
-          <li><span class="step-number">01</span><div><h3>Choose an option</h3><p>Review the listed programmes and prices. Message the team if you are unsure which option fits your learning goals.</p></div></li>
-          <li><span class="step-number">02</span><div><h3>Confirm the details</h3><p>Ask what is included, how access works, current availability, and any cancellation or refund terms before paying.</p></div></li>
-          <li><span class="step-number">03</span><div><h3>Make your payment</h3><p>Once details are confirmed, use the Tyme Bank instructions below and your name and surname as the payment reference.</p></div></li>
-          <li><span class="step-number">04</span><div><h3>Send your proof of payment</h3><p>Send your POP to the team on WhatsApp and follow their instructions for the next steps and programme access.</p></div></li>
-        </ol>
-        <a class="button button-outline start-contact" href="https://wa.me/27746040702?text=Hi%2C%20I%27d%20like%20to%20confirm%20programme%20details%20before%20paying." target="_blank" rel="noopener noreferrer">Confirm details on WhatsApp <span aria-hidden="true">↗</span></a>
-      </section>
-
-      <section class="payment section-wrap" id="payment">
-        <div class="payment-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> PAYMENT INFORMATION</div>
-          <h2>When you're<br><span>ready to begin.</span></h2>
-          <p>Confirm your chosen programme with the team before paying. Use an immediate payment and send your proof of payment (POP) once complete.</p>
-          <div class="payment-reminder"><span aria-hidden="true">↗</span> Use your name and surname as the payment reference.</div>
-        </div>
-        <div class="bank-card">
-          <div class="bank-card-head"><span class="bank-emblem" aria-hidden="true">T</span><span>PAYMENT DETAILS</span><span class="bank-secure">BANK TRANSFER</span></div>
-          <div class="bank-name">TYME BANK</div>
-          <div class="bank-detail"><span>ACCOUNT NUMBER</span><strong>5103 355 0443</strong><button class="copy-button" type="button" data-copy="5103 355 0443" data-label="account number" aria-label="Copy account number">Copy</button></div>
-          <div class="bank-detail"><span>BRANCH CODE</span><strong>678910</strong><button class="copy-button" type="button" data-copy="678910" data-label="branch code" aria-label="Copy branch code">Copy</button></div>
-          <div class="bank-detail"><span>PAYMENT REFERENCE</span><strong>Name and Surname</strong><button class="copy-button" type="button" data-copy="Name and Surname" data-label="payment reference" aria-label="Copy payment reference">Copy</button></div>
-          <p class="copy-status" aria-live="polite" role="status"></p>
-          <a class="button button-gold payment-button" href="https://wa.me/27746040702?text=Hi%2C%20I%27ve%20made%20a%20payment%20and%20would%20like%20to%20send%20my%20proof%20of%20payment." target="_blank" rel="noopener noreferrer">Send proof of payment <span aria-hidden="true">↗</span></a>
-        </div>
-      </section>
-
-      <section class="broker section-wrap">
-        <div class="broker-symbol" aria-hidden="true"><span>↗</span></div>
-        <div class="broker-copy"><span class="eyebrow">KHANYA'S BROKER</span><h2>Trade with Space Markets.</h2><p>Space Markets is the broker Khanya uses and recommends. Compare its services, terms and risks before deciding if it suits you. This referral link includes a partner code.</p></div>
-        <a class="button button-outline" href="https://my.spacemarkets.io/auth/register?partner_code=4553694" target="_blank" rel="noopener noreferrer">Explore Space Markets <span aria-hidden="true">↗</span></a>
-      </section>
-
-      <section class="community section-wrap" id="community">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> FIND US BETWEEN SESSIONS</div>
-            <h2>Every channel has<br><span>a purpose.</span></h2>
-          </div>
-          <p>Choose where you want to connect. Programme access, session times and availability should be confirmed with the team.</p>
-        </div>
-        <div class="community-grid">
-          <article class="community-card">
-            <span class="community-tag">LIVE COMMUNITY</span>
-            <h3>Discord</h3>
-            <p>Join the community for streamed trading sessions and live market discussion. Check with the team for stream times, access and what's included.</p>
-            <a href="https://discord.gg/NJdgaHGdw" target="_blank" rel="noopener noreferrer">Join Discord <span>↗</span></a>
-          </article>
-          <article class="community-card">
-            <span class="community-tag">VLOGS &amp; BRAND</span>
-            <h3>YouTube</h3>
-            <p>Watch Khanya's vlogs, get to know him beyond the charts, and discover more about Markets Wealth and its programmes.</p>
-            <a href="https://youtube.com/@khanya_us30?si=CQcnPdomPA4JJHbj" target="_blank" rel="noopener noreferrer">Explore YouTube <span>↗</span></a>
-          </article>
-          <article class="community-card">
-            <span class="community-tag">UPDATES</span>
-            <h3>Instagram</h3>
-            <p>Follow Khanya_us30 for posts and updates from the mentor and the Markets Wealth community.</p>
-            <a href="https://instagram.com/Khanya_us30/" target="_blank" rel="noopener noreferrer">Follow on Instagram <span>↗</span></a>
-          </article>
-          <article class="community-card">
-            <span class="community-tag">DIRECT CONTACT</span>
-            <h3>WhatsApp</h3>
-            <p>Ask questions, confirm programme details and availability, or send proof of payment after an immediate transfer.</p>
-            <a href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer">Message the team <span>↗</span></a>
-          </article>
-        </div>
-      </section>
-
-      <section class="vlog section-wrap" id="vlog">
-        <div class="vlog-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> OFF THE CHARTS</div>
-          <h2>Spend a day<br><span>with Khanya.</span></h2>
-          <p>Get to know the person behind the charts in this day-in-the-life vlog from Khanya's YouTube channel.</p>
-          <a class="text-link" href="https://youtu.be/B4js4R1DIEo?si=wLmcTSz4nVWReMC7" target="_blank" rel="noopener noreferrer">Watch on YouTube <span aria-hidden="true">↗</span></a>
-        </div>
-        <a class="video-frame" href="https://youtu.be/B4js4R1DIEo?si=wLmcTSz4nVWReMC7" target="_blank" rel="noopener noreferrer" aria-label="Watch Khanya's day-in-the-life vlog on YouTube">
-          <img
-            src="https://img.youtube.com/vi/B4js4R1DIEo/hqdefault.jpg"
-            alt="Preview image for Khanya's day-in-the-life vlog"
-            loading="lazy">
-          <span class="video-play" aria-hidden="true"><span></span></span>
-          <span class="video-caption"><span>KHANYA US30 · DAY IN THE LIFE</span><strong>Watch the vlog on YouTube <i>↗</i></strong></span>
-        </a>
-      </section>
-
-      <section class="faq section-wrap" id="faq">
-        <div class="section-heading">
-          <div>
-            <div class="eyebrow"><span class="eyebrow-dot"></span> QUICK ANSWERS</div>
-            <h2>Before you<br><span>get started.</span></h2>
-          </div>
-          <p>Still have a question? Contact the team to confirm programme details before making a payment.</p>
-        </div>
-        <div class="faq-list">
-          <details class="faq-item">
-            <summary>How do I join a programme?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Choose an option and message the team on WhatsApp. Confirm availability, what is included, and any terms before paying. Once confirmed, follow the payment instructions and send your proof of payment.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Which option is right for a beginner?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>The Beginners programme is listed as the beginner-focused option. Message the team to confirm its curriculum, format, duration and support before enrolling.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What is the difference between the group and one-on-one options?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>The Signals Cartel Group is listed as a group signal option. One on one is a private mentorship option. Ask the team to explain the specific sessions, access and support included in each.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What happens in the Discord trading sessions?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Discord is the community space for streamed trading sessions and live market discussion. Ask the team about the session schedule, how to access streams, and whether replays are available. Streams are not a guarantee of results or personal financial advice.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What will I find on YouTube?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Khanya's YouTube is for vlogs and getting to know the mentor and Markets Wealth. Watch the featured day-in-the-life vlog or visit the channel for more content and programme promotion.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What is the difference between forex and synthetic signals?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Forex concerns currency markets. Synthetic indices are simulated markets offered by brokers. The Synthetics Signals option is listed separately; confirm exactly which markets and access it covers before joining.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What does the monthly or lifetime group price mean?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>The listed Signals Cartel Group options are R1,000 monthly or R3,000 lifetime. Confirm what “lifetime” covers, how access is delivered, and any applicable terms with the team before paying.</p>
-          </details>
-          <details class="faq-item">
-            <summary>What does the programme price include? Is there a refund policy?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Only the programme names and prices are listed here. Ask the team to confirm the full inclusions, duration, access arrangements, and refund or cancellation terms before making payment.</p>
-          </details>
-          <details class="faq-item">
-            <summary>How do I pay?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Pay to the Tyme Bank account shown on this site using an immediate payment. Use your name and surname as the reference, then send your proof of payment to the team.</p>
-          </details>
-          <details class="faq-item">
-            <summary>When will I get copy-trader details?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>An admin will share copy-trader details when they get back to you. No specific response time is provided, so please contact the team if you need an update.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Can I lose money using signals or copy trading?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>No. Trading carries substantial risk and results are never guaranteed. You can lose some or all of your money. Review the risk disclaimer on this page and make your own informed decisions.</p>
-          </details>
-          <details class="faq-item">
-            <summary>Which broker does Khanya use?<span class="faq-toggle" aria-hidden="true"></span></summary>
-            <p>Khanya recommends Space Markets. The link on this website includes a partner code. Review the broker's terms, fees and risks independently before opening an account.</p>
-          </details>
-        </div>
-      </section>
-
-      <section class="contact section-wrap" id="contact">
-        <div class="contact-main">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> CONNECT WITH US</div>
-          <h2>Your next step<br><span>starts with a conversation.</span></h2>
-          <a class="button button-gold" href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer">Chat on WhatsApp <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="contact-links">
-          <a href="https://instagram.com/Khanya_us30/" target="_blank" rel="noopener noreferrer"><span>INSTAGRAM</span><strong>@Khanya_us30</strong><i>↗</i></a>
-          <a href="https://youtube.com/@khanya_us30?si=CQcnPdomPA4JJHbj" target="_blank" rel="noopener noreferrer"><span>YOUTUBE</span><strong>Khanya us30</strong><i>↗</i></a>
-          <a href="https://discord.gg/NJdgaHGdw" target="_blank" rel="noopener noreferrer"><span>DISCORD</span><strong>Join the community</strong><i>↗</i></a>
-          <a href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer"><span>WHATSAPP</span><strong>074 604 0702</strong><i>↗</i></a>
-        </div>
-      </section>
-
-      <section class="risk-note section-wrap" aria-label="Risk disclaimer">
-        <span class="risk-icon">!</span>
-        <p><strong>Trading risk disclaimer</strong> — Forex and synthetic trading involve substantial risk and may not be suitable for everyone. You may lose some or all of your invested capital. Signals, mentorship and copy trading do not guarantee results or profits. This website is for informational and educational purposes and is not financial advice. Make independent decisions and only trade with money you can afford to lose.</p>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="#home">
-        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
-        <span class="brand-name">MARKETS<span>WEALTH</span></span>
+      <a href="https://wa.me/27746040702" target="_blank" rel="noopener"
+         class="hidden md:inline-flex items-center gap-2 border border-paper bg-paper text-white px-4 py-2 text-[13px] font-medium hover:bg-gold hover:border-gold hover:text-paper transition-colors">
+        <img src="images/whatsapp.svg" alt="" aria-hidden="true" class="w-4 h-4">
+        WhatsApp
       </a>
-      <p>© <span id="current-year"></span> Markets Wealth Forex Group PTY LTD</p>
-      <a href="#home">BACK TO TOP <span aria-hidden="true">↑</span></a>
-    </footer>
-    <a class="whatsapp-float" href="https://wa.me/27746040702" target="_blank" rel="noopener noreferrer" aria-label="Contact Markets Wealth on WhatsApp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.5 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a12 12 0 0 0 5.7 1.5h.1c6.6 0 12-5.3 12-11.9 0-3.2-1.3-6.1-3.7-8.4Zm-8.4 18.3h-.1c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2c0-5.4 4.5-9.8 9.9-9.8 2.6 0 5.1 1 6.9 2.9a9.7 9.7 0 0 1 2.9 6.9c0 5.4-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6.1-.1.3-.3.4-.5.2-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 1.9-1.3.2-.7.2-1.2.2-1.3-.1-.2-.3-.3-.6-.4Z"/></svg>
-    </a>
-  </body>
+
+      <button id="menuBtn" aria-expanded="false" aria-label="Open menu"
+              class="md:hidden ml-auto w-9 h-9 flex flex-col items-center justify-center gap-1.5 border border-line">
+        <span class="w-4 h-px bg-paper transition-transform"></span>
+        <span class="w-4 h-px bg-paper transition-transform"></span>
+      </button>
+    </div>
+
+    <nav id="mobileNav" aria-label="Mobile navigation" class="hidden md:hidden border-t border-line bg-ink px-6 py-4">
+      <a href="#top" aria-current="page" class="block py-3 border-b border-line text-gold">Home</a>
+      <a href="programmes.html" class="block py-3 border-b border-line text-muted">Mentorship &amp; signals</a>
+      <a href="seminars.html" class="block py-3 border-b border-line text-muted">Community</a>
+      <a href="vlogs.html" class="block py-3 border-b border-line text-muted">Learning</a>
+      <a href="about.html" class="block py-3 border-b border-line text-muted">About</a>
+      <a href="process.html" class="block py-3 border-b border-line text-muted">How to join</a>
+      <a href="https://wa.me/27746040702" class="flex items-center gap-2 py-3 px-3 bg-paper text-white"> <img src="images/whatsapp.svg" alt="" aria-hidden="true" class="w-4 h-4">WhatsApp</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="border-b border-line">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-20 grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+        <div class="lg:col-span-7">
+          <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-gold mb-5">Forex mentorship &amp; trading signals | South Africa</p>
+          <h1 class="font-display font-semibold text-4xl sm:text-5xl lg:text-6xl leading-[1.05] tracking-[-0.03em] mb-5">Build skill.<br><span class="text-gold font-normal">Trade with a plan.</span></h1>
+          <p class="max-w-xl text-[15px] leading-relaxed text-muted mb-7">Get practical mentorship, clear trading ideas and support from people you can talk to. Learn at your pace, ask questions and keep risk in view. Trading is not a shortcut to guaranteed income.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="programmes.html" class="inline-flex items-center gap-2 bg-gold text-paper px-5 py-3 text-sm font-semibold hover:bg-gold-bright">Explore mentorship &amp; signals <span aria-hidden="true">&rarr;</span></a>
+            <a href="https://wa.me/27746040702" target="_blank" rel="noopener" class="inline-flex items-center gap-2 border border-line px-5 py-3 text-sm font-medium hover:border-gold hover:text-gold"><img src="images/whatsapp.svg" alt="" aria-hidden="true" class="w-4 h-4">Talk to the team</a>
+          </div>
+        </div>
+        <aside class="lg:col-span-5 bg-paper text-ink p-7 lg:p-8">
+          <p class="font-mono text-[10px] tracking-widest uppercase text-gold mb-4">A focused approach</p>
+          <div class="portrait-feature">
+            <div class="portrait-video-shell">
+              <video class="portrait-video" controls playsinline preload="metadata" aria-label="Portrait video of Khanya Dlodlongwana">
+                <source src="videos/featured-video.mp4" type="video/mp4">
+                Your browser does not support MP4 video playback.
+              </video>
+              <p class="portrait-video-fallback" aria-live="polite">
+                If the video does not play, <a href="videos/featured-video.mp4" target="_blank" rel="noopener">open or download it here</a>.
+              </p>
+            </div>
+            <div class="portrait-feature-copy">
+              <h2 class="font-display font-semibold text-2xl leading-tight mb-5">Learn the process, not just the entry.</h2>
+              <ul class="space-y-3 text-sm leading-relaxed text-white/80">
+                <li><span class="text-gold mr-2">01</span>Understand the reason behind a trade idea.</li>
+                <li><span class="text-gold mr-2">02</span>Plan your risk before you act.</li>
+                <li><span class="text-gold mr-2">03</span>Review decisions and keep improving.</li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services" class="bg-paper text-ink border-b border-paper">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-16">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-5 mb-8">
+          <div>
+            <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-gold mb-3">Ways to work with us</p>
+            <h2 class="font-display font-semibold text-3xl lg:text-4xl">Choose the support you need.</h2>
+          </div>
+          <a href="programmes.html" class="text-sm text-white underline underline-offset-4 decoration-white/40 hover:text-gold">See programmes and prices &rarr;</a>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4">
+          <article class="border border-white/20 p-5 lg:p-6 flex flex-col">
+            <span class="font-mono text-[10px] tracking-widest uppercase text-gold">Personal guidance</span>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">One-to-one mentorship</h3>
+            <p class="text-sm leading-relaxed text-white/75 mb-5">Build chart-reading skills, a trading routine and confidence through focused guidance.</p>
+            <a href="https://wa.me/27746040702?text=Hi%2C%20I%27d%20like%20to%20ask%20about%20one-to-one%20mentorship." target="_blank" rel="noopener" class="mt-auto text-sm font-medium text-white hover:text-gold">Ask about mentorship &rarr;</a>
+          </article>
+          <article class="border border-white/20 p-5 lg:p-6 flex flex-col">
+            <span class="font-mono text-[10px] tracking-widest uppercase text-gold">Group support</span>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Trading signals</h3>
+            <p class="text-sm leading-relaxed text-white/75 mb-5">Join a group for trade ideas and conversation. You remain responsible for your own risk.</p>
+            <a href="https://wa.me/27746040702?text=Hi%2C%20please%20share%20details%20about%20the%20signals%20group." target="_blank" rel="noopener" class="mt-auto text-sm font-medium text-white hover:text-gold">Ask about signals &rarr;</a>
+          </article>
+          <article class="border border-white/20 p-5 lg:p-6 flex flex-col">
+            <span class="font-mono text-[10px] tracking-widest uppercase text-gold">Start with the basics</span>
+            <h3 class="font-display font-semibold text-xl mt-3 mb-2">Beginner education</h3>
+            <p class="text-sm leading-relaxed text-white/75 mb-5">Learn chart basics, order types and risk management before trading independently.</p>
+            <a href="programmes.html" class="mt-auto text-sm font-medium text-white hover:text-gold">View beginner support &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-elevated border-b border-line">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:py-14 grid md:grid-cols-[minmax(0,240px)_1fr] items-center gap-7 lg:gap-10">
+        <img src="images/community-gathering.jpeg" alt="Khanya with Markets Wealth students at a hosted seminar" class="mx-auto block w-full max-w-[240px] h-auto rounded-lg" loading="lazy" decoding="async">
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-gold mb-3">A community to learn with</p>
+          <h2 class="font-display font-semibold text-2xl lg:text-3xl mb-3">Real conversations. Shared learning.</h2>
+          <p class="max-w-2xl text-sm leading-relaxed text-muted mb-5">Meet the people behind Markets Wealth, see seminar moments and read anonymized community feedback. Individual trading outcomes vary and are never guaranteed.</p>
+          <div class="flex flex-wrap gap-x-6 gap-y-3 text-sm font-medium">
+            <a href="seminars.html" class="text-paper underline underline-offset-4 decoration-line hover:text-gold">Community &amp; account examples &rarr;</a>
+            <a href="about.html" class="text-paper underline underline-offset-4 decoration-line hover:text-gold">About Khanya &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-b border-line">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-12 lg:py-14 flex flex-col md:flex-row md:items-center justify-between gap-5">
+        <div>
+          <p class="font-mono text-[11px] tracking-[0.18em] uppercase text-gold mb-3">Keep learning</p>
+          <h2 class="font-display font-semibold text-2xl lg:text-3xl mb-2">Useful lessons, without the noise.</h2>
+          <p class="max-w-2xl text-sm leading-relaxed text-muted">Watch concise trading vlogs and explore the learning process at your own pace.</p>
+        </div>
+        <a href="vlogs.html" class="inline-flex items-center gap-2 border border-line px-5 py-3 text-sm font-medium hover:border-gold hover:text-gold shrink-0">Explore the vlogs <span aria-hidden="true">&rarr;</span></a>
+      </div>
+    </section>
+
+    <section class="border-b border-line border-l-2 border-l-green bg-elevated">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 py-7">
+        <p class="max-w-4xl text-[13px] leading-relaxed text-muted"><strong class="text-paper font-semibold">Trading risk notice:</strong> Forex and synthetic trading involve substantial risk. You may lose some or all of your capital. Signals, mentorship and copy trading do not guarantee profits. Website content is educational, not financial advice. Trade only with capital you can afford to lose.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-ink">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 py-10 flex flex-col md:flex-row items-start md:items-center gap-6">
+      <div>
+        <p class="font-display font-semibold text-xl tracking-tight">Markets Wealth</p>
+        <p class="font-mono text-[10px] tracking-widest uppercase text-dim mt-1">Forex Group PTY LTD, South Africa</p>
+      </div>
+      <nav class="md:ml-auto flex flex-wrap gap-6 text-sm text-muted">
+        <a href="programmes.html" class="hover:text-gold transition-colors">Mentorship &amp; signals</a>
+        <a href="vlogs.html" class="hover:text-gold transition-colors">Learning</a>
+        <a href="seminars.html" class="hover:text-gold transition-colors">Community</a>
+        <a href="about.html" class="hover:text-gold transition-colors">About</a>
+        <a href="process.html" class="hover:text-gold transition-colors">How to join</a>
+        <a href="faq.html" class="hover:text-gold transition-colors">FAQ</a>
+        <a href="https://wa.me/27746040702" target="_blank" rel="noopener" class="hover:text-gold transition-colors">WhatsApp</a>
+      </nav>
+      <p class="md:ml-auto font-mono text-[10px] tracking-wider text-dim">© <span id="year"></span> Markets Wealth Forex Group PTY LTD</p>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/27746040702" target="_blank" rel="noopener" aria-label="Contact on WhatsApp"
+     class="fixed bottom-6 right-6 z-30 w-[52px] h-[52px] rounded-full bg-green-deep text-ink grid place-items-center shadow-lg hover:bg-green hover:-translate-y-0.5 transition-all">
+    <img src="images/whatsapp.svg" alt="" aria-hidden="true" class="w-6 h-6">
+  </a>
+
+  <script src="script.js" defer></script>
+</body>
 </html>
