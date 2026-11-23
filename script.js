@@ -45,10 +45,7 @@ document.querySelectorAll(".portrait-video").forEach((video) => {
     if (playback) {
       playback.catch((error) => {
         if (error.name === "NotAllowedError") {
-          if (fallback) {
-            fallback.hidden = false;
-            fallback.textContent = "Autoplay is blocked by your browser. Use the player controls to start the video.";
-          }
+          video.controls = true;
           return;
         }
         console.error("Could not start the portrait video.", error);
