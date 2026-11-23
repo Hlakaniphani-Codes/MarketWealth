@@ -26,8 +26,9 @@ const yearEl = document.querySelector("#year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 document.querySelectorAll(".portrait-video").forEach((video) => {
+  const fallback = video.parentElement.querySelector(".portrait-video-fallback");
+
   video.addEventListener("error", () => {
-    const fallback = video.parentElement.querySelector(".portrait-video-fallback");
     if (fallback) {
       fallback.hidden = false;
       fallback.textContent = "This browser could not play the video. ";
@@ -37,6 +38,29 @@ document.querySelectorAll(".portrait-video").forEach((video) => {
       fallback.append(link);
     }
   });
+
+  const startPlayback = () => {
+    video.muted = true;
+    const playback = video.play();
+    if (playback) {
+      playback.catch((error) => {
+        if (error.name === "NotAllowedError") {
+          if (fallback) {
+            fallback.hidden = false;
+            fallback.textContent = "Autoplay is blocked by your browser. Use the player controls to start the video.";
+          }
+          return;
+        }
+        console.error("Could not start the portrait video.", error);
+      });
+    }
+  };
+
+  if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+    startPlayback();
+  } else {
+    video.addEventListener("canplay", startPlayback, { once: true });
+  }
 });
 
 // Copy to clipboard
